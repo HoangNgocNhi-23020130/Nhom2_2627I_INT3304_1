@@ -8,5 +8,3 @@ BT2/client
 BT2/multi_client
 **/*_bin
 **/bot_cpp
-**/replays/*.json
-**/replays/replay_*.json

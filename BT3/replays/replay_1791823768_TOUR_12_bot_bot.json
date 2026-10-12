@@ -1,0 +1,9049 @@
+{
+  "id": "replay_1791823768_TOUR_12_bot_bot",
+  "version": "2.0",
+  "dateStr": "12/10/2026 23:49",
+  "timestamp": 1791823768712,
+  "mode": "bot_vs_bot_live",
+  "p1": {
+    "name": "Bot 1 (bot_template)",
+    "type": "bot"
+  },
+  "p2": {
+    "name": "Bot 2 (bot_smart)",
+    "type": "bot"
+  },
+  "rules": {
+    "version": "2.0",
+    "name": "OanTuTi Tactics 9x9 Standard",
+    "board_size": 9,
+    "max_turns": 200,
+    "goals": {
+      "1": {
+        "r": 0,
+        "c": 8,
+        "notation": "i9",
+        "name": "Đích P1 (Phải-Trên)"
+      },
+      "2": {
+        "r": 8,
+        "c": 0,
+        "notation": "a1",
+        "name": "Đích P2 (Trái-Dưới)"
+      }
+    },
+    "homes": {
+      "1": {
+        "r": 8,
+        "c": 0,
+        "notation": "a1",
+        "name": "Nhà P1 (Trái-Dưới)"
+      },
+      "2": {
+        "r": 0,
+        "c": 8,
+        "notation": "i9",
+        "name": "Nhà P2 (Phải-Trên)"
+      }
+    },
+    "allow_enter_own_home": false,
+    "beats": {
+      "R": "S",
+      "S": "P",
+      "P": "R"
+    },
+    "same_type_rule": "block",
+    "win_conditions": {
+      "reach_goal": true,
+      "extinction_any_type": true,
+      "turn_limit": true
+    },
+    "piece_emojis": {
+      "R": "✊",
+      "P": "✋",
+      "S": "✌️"
+    }
+  },
+  "initialBoard": [
+    [
+      null,
+      null,
+      {
+        "owner": 2,
+        "type": "P"
+      },
+      null,
+      {
+        "owner": 2,
+        "type": "S"
+      },
+      null,
+      {
+        "owner": 2,
+        "type": "P"
+      },
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      {
+        "owner": 2,
+        "type": "R"
+      },
+      null,
+      null,
+      {
+        "owner": 2,
+        "type": "R"
+      },
+      {
+        "owner": 2,
+        "type": "S"
+      },
+      null
+    ],
+    [
+      {
+        "owner": 1,
+        "type": "P"
+      },
+      null,
+      null,
+      null,
+      {
+        "owner": 2,
+        "type": "S"
+      },
+      {
+        "owner": 2,
+        "type": "R"
+      },
+      {
+        "owner": 2,
+        "type": "R"
+      },
+      {
+        "owner": 2,
+        "type": "S"
+      },
+      {
+        "owner": 2,
+        "type": "R"
+      }
+    ],
+    [
+      null,
+      {
+        "owner": 1,
+        "type": "R"
+      },
+      null,
+      null,
+      null,
+      null,
+      {
+        "owner": 2,
+        "type": "P"
+      },
+      {
+        "owner": 2,
+        "type": "S"
+      },
+      {
+        "owner": 2,
+        "type": "S"
+      }
+    ],
+    [
+      {
+        "owner": 1,
+        "type": "S"
+      },
+      null,
+      {
+        "owner": 1,
+        "type": "S"
+      },
+      null,
+      null,
+      null,
+      {
+        "owner": 2,
+        "type": "R"
+      },
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      {
+        "owner": 1,
+        "type": "R"
+      },
+      null,
+      null,
+      null,
+      null,
+      {
+        "owner": 2,
+        "type": "P"
+      },
+      {
+        "owner": 2,
+        "type": "P"
+      }
+    ],
+    [
+      {
+        "owner": 1,
+        "type": "P"
+      },
+      {
+        "owner": 1,
+        "type": "R"
+      },
+      {
+        "owner": 1,
+        "type": "R"
+      },
+      {
+        "owner": 1,
+        "type": "P"
+      },
+      {
+        "owner": 1,
+        "type": "R"
+      },
+      null,
+      null,
+      null,
+      {
+        "owner": 2,
+        "type": "P"
+      }
+    ],
+    [
+      null,
+      {
+        "owner": 1,
+        "type": "S"
+      },
+      {
+        "owner": 1,
+        "type": "S"
+      },
+      {
+        "owner": 1,
+        "type": "S"
+      },
+      null,
+      {
+        "owner": 1,
+        "type": "P"
+      },
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      {
+        "owner": 1,
+        "type": "R"
+      },
+      {
+        "owner": 1,
+        "type": "S"
+      },
+      null,
+      {
+        "owner": 1,
+        "type": "P"
+      },
+      {
+        "owner": 1,
+        "type": "P"
+      },
+      null,
+      null
+    ]
+  ],
+  "moves": [
+    {
+      "step": 1,
+      "player": 1,
+      "from": {
+        "r": 6,
+        "c": 4
+      },
+      "to": {
+        "r": 7,
+        "c": 4
+      },
+      "fromNotation": "e3",
+      "toNotation": "e2",
+      "pieceType": "R",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 2.0,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "step": 2,
+      "player": 2,
+      "from": {
+        "r": 1,
+        "c": 3
+      },
+      "to": {
+        "r": 2,
+        "c": 2
+      },
+      "fromNotation": "d8",
+      "toNotation": "c7",
+      "pieceType": "R",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.7,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "step": 3,
+      "player": 1,
+      "from": {
+        "r": 6,
+        "c": 1
+      },
+      "to": {
+        "r": 5,
+        "c": 1
+      },
+      "fromNotation": "b3",
+      "toNotation": "b4",
+      "pieceType": "R",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.9,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "step": 4,
+      "player": 2,
+      "from": {
+        "r": 5,
+        "c": 7
+      },
+      "to": {
+        "r": 6,
+        "c": 6
+      },
+      "fromNotation": "h4",
+      "toNotation": "g3",
+      "pieceType": "P",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.6,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "step": 5,
+      "player": 1,
+      "from": {
+        "r": 8,
+        "c": 6
+      },
+      "to": {
+        "r": 7,
+        "c": 6
+      },
+      "fromNotation": "g1",
+      "toNotation": "g2",
+      "pieceType": "P",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.8,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "step": 6,
+      "player": 2,
+      "from": {
+        "r": 5,
+        "c": 8
+      },
+      "to": {
+        "r": 6,
+        "c": 7
+      },
+      "fromNotation": "i4",
+      "toNotation": "h3",
+      "pieceType": "P",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.5,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "step": 7,
+      "player": 1,
+      "from": {
+        "r": 6,
+        "c": 2
+      },
+      "to": {
+        "r": 5,
+        "c": 3
+      },
+      "fromNotation": "c3",
+      "toNotation": "d4",
+      "pieceType": "R",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.7,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "step": 8,
+      "player": 2,
+      "from": {
+        "r": 2,
+        "c": 2
+      },
+      "to": {
+        "r": 3,
+        "c": 3
+      },
+      "fromNotation": "c7",
+      "toNotation": "d6",
+      "pieceType": "R",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.5,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "step": 9,
+      "player": 1,
+      "from": {
+        "r": 8,
+        "c": 2
+      },
+      "to": {
+        "r": 8,
+        "c": 1
+      },
+      "fromNotation": "c1",
+      "toNotation": "b1",
+      "pieceType": "R",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.8,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "step": 10,
+      "player": 2,
+      "from": {
+        "r": 3,
+        "c": 3
+      },
+      "to": {
+        "r": 4,
+        "c": 2
+      },
+      "fromNotation": "d6",
+      "toNotation": "c5",
+      "pieceType": "R",
+      "isCapture": true,
+      "capturedType": "S",
+      "elapsedMs": 0.5,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "step": 11,
+      "player": 1,
+      "from": {
+        "r": 7,
+        "c": 6
+      },
+      "to": {
+        "r": 8,
+        "c": 7
+      },
+      "fromNotation": "g2",
+      "toNotation": "h1",
+      "pieceType": "P",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.8,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ]
+      ]
+    },
+    {
+      "step": 12,
+      "player": 2,
+      "from": {
+        "r": 6,
+        "c": 6
+      },
+      "to": {
+        "r": 5,
+        "c": 5
+      },
+      "fromNotation": "g3",
+      "toNotation": "f4",
+      "pieceType": "P",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.5,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ]
+      ]
+    },
+    {
+      "step": 13,
+      "player": 1,
+      "from": {
+        "r": 7,
+        "c": 1
+      },
+      "to": {
+        "r": 6,
+        "c": 1
+      },
+      "fromNotation": "b2",
+      "toNotation": "b3",
+      "pieceType": "S",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 1.1,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ]
+      ]
+    },
+    {
+      "step": 14,
+      "player": 2,
+      "from": {
+        "r": 2,
+        "c": 6
+      },
+      "to": {
+        "r": 3,
+        "c": 5
+      },
+      "fromNotation": "g7",
+      "toNotation": "f6",
+      "pieceType": "R",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.7,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ]
+      ]
+    },
+    {
+      "step": 15,
+      "player": 1,
+      "from": {
+        "r": 3,
+        "c": 1
+      },
+      "to": {
+        "r": 2,
+        "c": 1
+      },
+      "fromNotation": "b6",
+      "toNotation": "b7",
+      "pieceType": "R",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 1.0,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ]
+      ]
+    },
+    {
+      "step": 16,
+      "player": 2,
+      "from": {
+        "r": 5,
+        "c": 5
+      },
+      "to": {
+        "r": 4,
+        "c": 4
+      },
+      "fromNotation": "f4",
+      "toNotation": "e5",
+      "pieceType": "P",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.5,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ]
+      ]
+    },
+    {
+      "step": 17,
+      "player": 1,
+      "from": {
+        "r": 8,
+        "c": 5
+      },
+      "to": {
+        "r": 8,
+        "c": 4
+      },
+      "fromNotation": "f1",
+      "toNotation": "e1",
+      "pieceType": "P",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.9,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ]
+      ]
+    },
+    {
+      "step": 18,
+      "player": 2,
+      "from": {
+        "r": 4,
+        "c": 4
+      },
+      "to": {
+        "r": 5,
+        "c": 3
+      },
+      "fromNotation": "e5",
+      "toNotation": "d4",
+      "pieceType": "P",
+      "isCapture": true,
+      "capturedType": "R",
+      "elapsedMs": 0.5,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ]
+      ]
+    },
+    {
+      "step": 19,
+      "player": 1,
+      "from": {
+        "r": 2,
+        "c": 1
+      },
+      "to": {
+        "r": 1,
+        "c": 0
+      },
+      "fromNotation": "b7",
+      "toNotation": "a8",
+      "pieceType": "R",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.8,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ]
+      ]
+    },
+    {
+      "step": 20,
+      "player": 2,
+      "from": {
+        "r": 5,
+        "c": 3
+      },
+      "to": {
+        "r": 5,
+        "c": 2
+      },
+      "fromNotation": "d4",
+      "toNotation": "c4",
+      "pieceType": "P",
+      "isCapture": true,
+      "capturedType": "R",
+      "elapsedMs": 0.5,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ]
+      ]
+    },
+    {
+      "step": 21,
+      "player": 1,
+      "from": {
+        "r": 5,
+        "c": 1
+      },
+      "to": {
+        "r": 5,
+        "c": 0
+      },
+      "fromNotation": "b4",
+      "toNotation": "a4",
+      "pieceType": "R",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.7,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ]
+      ]
+    },
+    {
+      "step": 22,
+      "player": 2,
+      "from": {
+        "r": 4,
+        "c": 6
+      },
+      "to": {
+        "r": 5,
+        "c": 5
+      },
+      "fromNotation": "g5",
+      "toNotation": "f4",
+      "pieceType": "R",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.4,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ]
+      ]
+    },
+    {
+      "step": 23,
+      "player": 1,
+      "from": {
+        "r": 7,
+        "c": 2
+      },
+      "to": {
+        "r": 7,
+        "c": 1
+      },
+      "fromNotation": "c2",
+      "toNotation": "b2",
+      "pieceType": "S",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.6,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ]
+      ]
+    },
+    {
+      "step": 24,
+      "player": 2,
+      "from": {
+        "r": 2,
+        "c": 4
+      },
+      "to": {
+        "r": 3,
+        "c": 4
+      },
+      "fromNotation": "e7",
+      "toNotation": "e6",
+      "pieceType": "S",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.4,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ]
+      ]
+    },
+    {
+      "step": 25,
+      "player": 1,
+      "from": {
+        "r": 1,
+        "c": 0
+      },
+      "to": {
+        "r": 1,
+        "c": 1
+      },
+      "fromNotation": "a8",
+      "toNotation": "b8",
+      "pieceType": "R",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.7,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ]
+      ]
+    },
+    {
+      "step": 26,
+      "player": 2,
+      "from": {
+        "r": 0,
+        "c": 2
+      },
+      "to": {
+        "r": 1,
+        "c": 1
+      },
+      "fromNotation": "c9",
+      "toNotation": "b8",
+      "pieceType": "P",
+      "isCapture": true,
+      "capturedType": "R",
+      "elapsedMs": 0.4,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ]
+      ]
+    },
+    {
+      "step": 27,
+      "player": 1,
+      "from": {
+        "r": 2,
+        "c": 0
+      },
+      "to": {
+        "r": 2,
+        "c": 1
+      },
+      "fromNotation": "a7",
+      "toNotation": "b7",
+      "pieceType": "P",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.5,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ]
+      ]
+    },
+    {
+      "step": 28,
+      "player": 2,
+      "from": {
+        "r": 0,
+        "c": 4
+      },
+      "to": {
+        "r": 1,
+        "c": 4
+      },
+      "fromNotation": "e9",
+      "toNotation": "e8",
+      "pieceType": "S",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.4,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ]
+      ]
+    },
+    {
+      "step": 29,
+      "player": 1,
+      "from": {
+        "r": 7,
+        "c": 3
+      },
+      "to": {
+        "r": 6,
+        "c": 2
+      },
+      "fromNotation": "d2",
+      "toNotation": "c3",
+      "pieceType": "S",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.6,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ]
+      ]
+    },
+    {
+      "step": 30,
+      "player": 2,
+      "from": {
+        "r": 1,
+        "c": 7
+      },
+      "to": {
+        "r": 2,
+        "c": 6
+      },
+      "fromNotation": "h8",
+      "toNotation": "g7",
+      "pieceType": "S",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.4,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ]
+      ]
+    },
+    {
+      "step": 31,
+      "player": 1,
+      "from": {
+        "r": 8,
+        "c": 7
+      },
+      "to": {
+        "r": 7,
+        "c": 7
+      },
+      "fromNotation": "h1",
+      "toNotation": "h2",
+      "pieceType": "P",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.6,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "step": 32,
+      "player": 2,
+      "from": {
+        "r": 1,
+        "c": 4
+      },
+      "to": {
+        "r": 2,
+        "c": 4
+      },
+      "fromNotation": "e8",
+      "toNotation": "e7",
+      "pieceType": "S",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.4,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "step": 33,
+      "player": 1,
+      "from": {
+        "r": 4,
+        "c": 0
+      },
+      "to": {
+        "r": 5,
+        "c": 1
+      },
+      "fromNotation": "a5",
+      "toNotation": "b4",
+      "pieceType": "S",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.5,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "step": 34,
+      "player": 2,
+      "from": {
+        "r": 4,
+        "c": 2
+      },
+      "to": {
+        "r": 5,
+        "c": 1
+      },
+      "fromNotation": "c5",
+      "toNotation": "b4",
+      "pieceType": "R",
+      "isCapture": true,
+      "capturedType": "S",
+      "elapsedMs": 0.3,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "step": 35,
+      "player": 1,
+      "from": {
+        "r": 6,
+        "c": 3
+      },
+      "to": {
+        "r": 7,
+        "c": 3
+      },
+      "fromNotation": "d3",
+      "toNotation": "d2",
+      "pieceType": "P",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.5,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "step": 36,
+      "player": 2,
+      "from": {
+        "r": 5,
+        "c": 1
+      },
+      "to": {
+        "r": 6,
+        "c": 1
+      },
+      "fromNotation": "b4",
+      "toNotation": "b3",
+      "pieceType": "R",
+      "isCapture": true,
+      "capturedType": "S",
+      "elapsedMs": 0.3,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "step": 37,
+      "player": 1,
+      "from": {
+        "r": 6,
+        "c": 2
+      },
+      "to": {
+        "r": 7,
+        "c": 2
+      },
+      "fromNotation": "c3",
+      "toNotation": "c2",
+      "pieceType": "S",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.5,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "step": 38,
+      "player": 2,
+      "from": {
+        "r": 6,
+        "c": 1
+      },
+      "to": {
+        "r": 7,
+        "c": 1
+      },
+      "fromNotation": "b3",
+      "toNotation": "b2",
+      "pieceType": "R",
+      "isCapture": true,
+      "capturedType": "S",
+      "elapsedMs": 0.3,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "step": 39,
+      "player": 1,
+      "from": {
+        "r": 2,
+        "c": 1
+      },
+      "to": {
+        "r": 1,
+        "c": 2
+      },
+      "fromNotation": "b7",
+      "toNotation": "c8",
+      "pieceType": "P",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.4,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "step": 40,
+      "player": 2,
+      "from": {
+        "r": 7,
+        "c": 1
+      },
+      "to": {
+        "r": 8,
+        "c": 0
+      },
+      "fromNotation": "b2",
+      "toNotation": "a1",
+      "pieceType": "R",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.3,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null
+        ],
+        [
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null
+        ]
+      ]
+    }
+  ],
+  "result": {
+    "winner": 2,
+    "winnerName": "Bot 2 (bot_smart)",
+    "reason": "P2 đã đưa quân chiếm thành công ô đích a1!",
+    "reasonType": "base",
+    "durationSec": 1
+  }
+}

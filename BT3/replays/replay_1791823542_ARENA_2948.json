@@ -1,0 +1,511 @@
+{
+  "id": "replay_1791823542_ARENA_2948",
+  "version": "2.0",
+  "dateStr": "12/10/2026 23:45",
+  "timestamp": 1791823542067,
+  "mode": "bot_vs_bot_live",
+  "p1": {
+    "name": "Bot 1 (bot_smart)",
+    "type": "bot"
+  },
+  "p2": {
+    "name": "Bot 2 (bot_template)",
+    "type": "bot"
+  },
+  "rules": {
+    "version": "2.0",
+    "name": "OanTuTi Tactics 9x9 Standard",
+    "board_size": 9,
+    "max_turns": 200,
+    "goals": {
+      "1": {
+        "r": 0,
+        "c": 8,
+        "notation": "i9",
+        "name": "Đích P1 (Phải-Trên)"
+      },
+      "2": {
+        "r": 8,
+        "c": 0,
+        "notation": "a1",
+        "name": "Đích P2 (Trái-Dưới)"
+      }
+    },
+    "homes": {
+      "1": {
+        "r": 8,
+        "c": 0,
+        "notation": "a1",
+        "name": "Nhà P1 (Trái-Dưới)"
+      },
+      "2": {
+        "r": 0,
+        "c": 8,
+        "notation": "i9",
+        "name": "Nhà P2 (Phải-Trên)"
+      }
+    },
+    "allow_enter_own_home": false,
+    "beats": {
+      "R": "S",
+      "S": "P",
+      "P": "R"
+    },
+    "same_type_rule": "block",
+    "win_conditions": {
+      "reach_goal": true,
+      "extinction_any_type": true,
+      "turn_limit": true
+    },
+    "piece_emojis": {
+      "R": "✊",
+      "P": "✋",
+      "S": "✌️"
+    }
+  },
+  "initialBoard": [
+    [
+      null,
+      null,
+      {
+        "owner": 2,
+        "type": "P"
+      },
+      null,
+      null,
+      null,
+      {
+        "owner": 2,
+        "type": "R"
+      },
+      {
+        "owner": 2,
+        "type": "S"
+      },
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      {
+        "owner": 2,
+        "type": "R"
+      },
+      {
+        "owner": 2,
+        "type": "P"
+      },
+      {
+        "owner": 2,
+        "type": "S"
+      },
+      {
+        "owner": 2,
+        "type": "P"
+      },
+      {
+        "owner": 2,
+        "type": "S"
+      },
+      {
+        "owner": 2,
+        "type": "S"
+      }
+    ],
+    [
+      {
+        "owner": 1,
+        "type": "P"
+      },
+      null,
+      null,
+      null,
+      {
+        "owner": 2,
+        "type": "P"
+      },
+      null,
+      {
+        "owner": 2,
+        "type": "S"
+      },
+      {
+        "owner": 2,
+        "type": "S"
+      },
+      {
+        "owner": 2,
+        "type": "R"
+      }
+    ],
+    [
+      null,
+      {
+        "owner": 1,
+        "type": "R"
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "owner": 2,
+        "type": "P"
+      },
+      {
+        "owner": 2,
+        "type": "P"
+      }
+    ],
+    [
+      null,
+      {
+        "owner": 1,
+        "type": "P"
+      },
+      {
+        "owner": 1,
+        "type": "P"
+      },
+      null,
+      null,
+      null,
+      null,
+      {
+        "owner": 2,
+        "type": "R"
+      },
+      null
+    ],
+    [
+      null,
+      {
+        "owner": 1,
+        "type": "S"
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "owner": 2,
+        "type": "R"
+      },
+      {
+        "owner": 2,
+        "type": "R"
+      }
+    ],
+    [
+      {
+        "owner": 1,
+        "type": "R"
+      },
+      {
+        "owner": 1,
+        "type": "P"
+      },
+      {
+        "owner": 1,
+        "type": "S"
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      {
+        "owner": 1,
+        "type": "S"
+      },
+      {
+        "owner": 1,
+        "type": "S"
+      },
+      {
+        "owner": 1,
+        "type": "S"
+      },
+      {
+        "owner": 1,
+        "type": "P"
+      },
+      {
+        "owner": 1,
+        "type": "R"
+      },
+      {
+        "owner": 1,
+        "type": "R"
+      },
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      {
+        "owner": 1,
+        "type": "S"
+      },
+      {
+        "owner": 1,
+        "type": "R"
+      },
+      {
+        "owner": 1,
+        "type": "P"
+      },
+      null,
+      {
+        "owner": 1,
+        "type": "R"
+      },
+      null,
+      null,
+      null
+    ]
+  ],
+  "moves": [
+    {
+      "step": 1,
+      "player": 1,
+      "from": {
+        "r": 7,
+        "c": 4
+      },
+      "to": {
+        "r": 6,
+        "c": 3
+      },
+      "fromNotation": "e2",
+      "toNotation": "d3",
+      "pieceType": "R",
+      "isCapture": false,
+      "capturedType": null,
+      "elapsedMs": 0.2,
+      "boardSnapshot": [
+        [
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "S"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "P"
+          },
+          {
+            "owner": 2,
+            "type": "P"
+          }
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 2,
+            "type": "R"
+          },
+          {
+            "owner": 2,
+            "type": "R"
+          }
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 1,
+            "type": "S"
+          },
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          {
+            "owner": 1,
+            "type": "P"
+          },
+          null,
+          {
+            "owner": 1,
+            "type": "R"
+          },
+          null,
+          null,
+          null
+        ]
+      ]
+    }
+  ],
+  "result": {
+    "winner": 1,
+    "winnerName": "Bot 1 (bot_smart)",
+    "reason": "Bot 2 (bot_template) đi nước phạm quy (None ➔ None)!",
+    "reasonType": "surrender",
+    "durationSec": 1
+  }
+}

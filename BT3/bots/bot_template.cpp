@@ -19,20 +19,34 @@ struct Move {
     bool isCapture;
 };
 
-// Hàm trích xuất nhanh các nước đi từ chuỗi JSON đơn giản
+// Hàm trích xuất nhanh các nước đi từ chuỗi JSON đơn giản (chống lỗi khoảng trắng)
 std::vector<Move> extractMoves(const std::string& line) {
     std::vector<Move> moves;
     size_t pos = 0;
-    while ((pos = line.find("\"from_notation\":\"", pos)) != std::string::npos) {
-        pos += 17;
-        std::string from = line.substr(pos, 2);
-        
-        size_t toPos = line.find("\"to_notation\":\"", pos);
-        if (toPos != std::string::npos && toPos - pos < 50) {
-            toPos += 15;
-            std::string to = line.substr(toPos, 2);
-            moves.push_back({from, to, false});
+    while ((pos = line.find("\"from_notation\"", pos)) != std::string::npos) {
+        size_t colonFrom = line.find(':', pos);
+        if (colonFrom == std::string::npos) break;
+        size_t q1 = line.find('"', colonFrom);
+        if (q1 == std::string::npos) break;
+        size_t q2 = line.find('"', q1 + 1);
+        if (q2 == std::string::npos) break;
+        std::string from = line.substr(q1 + 1, q2 - q1 - 1);
+
+        size_t toKey = line.find("\"to_notation\"", q2);
+        if (toKey == std::string::npos || toKey - q2 > 150) {
+            pos = q2;
+            continue;
         }
+        size_t colonTo = line.find(':', toKey);
+        if (colonTo == std::string::npos) break;
+        size_t q3 = line.find('"', colonTo);
+        if (q3 == std::string::npos) break;
+        size_t q4 = line.find('"', q3 + 1);
+        if (q4 == std::string::npos) break;
+        std::string to = line.substr(q3 + 1, q4 - q3 - 1);
+
+        moves.push_back({from, to, false});
+        pos = q4;
     }
     return moves;
 }
@@ -40,13 +54,13 @@ std::vector<Move> extractMoves(const std::string& line) {
 int main() {
     std::ios_base::sync_with_stdio(false);
     std::cin.tie(NULL);
-    srand(time(NULL));
+    srand(static_cast<unsigned int>(time(NULL)));
 
     std::string line;
     while (std::getline(std::cin, line)) {
         if (line.empty()) continue;
 
-        if (line.find("\"type\":\"move\"") != std::string::npos || line.find("\"type\": \"move\"") != std::string::npos) {
+        if (line.find("\"type\"") != std::string::npos && line.find("\"move\"") != std::string::npos) {
             std::vector<Move> legalMoves = extractMoves(line);
 
             if (legalMoves.empty()) {

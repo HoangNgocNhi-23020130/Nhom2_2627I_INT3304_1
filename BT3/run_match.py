@@ -321,7 +321,9 @@ class MatchRunner:
 
         # Lưu Replay JSON
         replay_id = f"replay_{int(time.time())}_{self.room_code}"
-        os.makedirs("replays", exist_ok=True)
+        replays_dir = Path(__file__).resolve().parent / "replays"
+        replays_dir.mkdir(parents=True, exist_ok=True)
+        replay_file = replays_dir / f"{replay_id}.json"
         replay_path = f"replays/{replay_id}.json"
 
         replay_data = {
@@ -344,7 +346,7 @@ class MatchRunner:
             }
         }
 
-        with open(replay_path, "w", encoding="utf-8") as f:
+        with open(replay_file, "w", encoding="utf-8") as f:
             json.dump(replay_data, f, ensure_ascii=False, indent=2)
         print(f"💾 Đã lưu file Replay trận đấu: {replay_path}")
 

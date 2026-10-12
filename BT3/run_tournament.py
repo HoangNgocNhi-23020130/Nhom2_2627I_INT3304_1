@@ -24,7 +24,7 @@ def find_bots(bots_dir="bots"):
     bot_files = []
     for f in p.iterdir():
         if f.is_file():
-            if f.suffix in [".py", ".cpp"] and not f.name.endswith("_bin") and not f.name.startswith("bot_template"):
+            if f.suffix in [".py", ".cpp"] and not f.name.endswith("_bin"):
                 bot_files.append(str(f))
     return sorted(bot_files)
 

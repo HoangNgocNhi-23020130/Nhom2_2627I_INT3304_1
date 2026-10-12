@@ -45,6 +45,8 @@ def is_in_danger(board, tr, tc, piece_type, opponent):
     return False
 
 def main():
+    last_moves = []  # Lưu các nước đi gần nhất để tránh lặp nước vô nghĩa
+
     for line in sys.stdin:
         line = line.strip()
         if not line:
@@ -70,6 +72,17 @@ def main():
                 continue
 
             counts = count_pieces(board)
+
+            # Kiểm tra xem có quân địch nào áp sát ô nhà (khoảng cách <= 2) không
+            opp_threat_to_home = False
+            for r in range(len(board)):
+                for c in range(len(board[r])):
+                    p = board[r][c]
+                    if p and p["owner"] == opponent and chebyshev_dist(r, c, hr, hc) <= 2:
+                        opp_threat_to_home = True
+                        break
+                if opp_threat_to_home:
+                    break
 
             best_move = None
             best_score = -999999
@@ -102,10 +115,11 @@ def main():
                         if counts[opponent].get(ttype, 0) <= 2:
                             score += 550  # Thưởng lớn để tiêu diệt sạch loài này!
 
-                # 4. Canh giữ cửa nhà nếu đối phương áp sát
-                dist_to_home = chebyshev_dist(tr, tc, hr, hc)
-                if dist_to_home <= 1:
-                    score += 70
+                # 4. Canh giữ cửa nhà CHỈ KHI đối phương thực sự áp sát
+                if opp_threat_to_home:
+                    dist_to_home = chebyshev_dist(tr, tc, hr, hc)
+                    if dist_to_home <= 1:
+                        score += 90
 
                 # 5. Né nguy hiểm
                 if is_in_danger(board, tr, tc, ptype, opponent):
@@ -113,16 +127,31 @@ def main():
                     if counts[player].get(ptype, 0) <= 2:
                         score -= 300  # Bảo vệ quân quý giá
 
+                # 6. Chống lặp nước đi qua lại vô nghĩa (anti-oscillation)
+                if (tr, tc, fr, fc) in last_moves:
+                    score -= 120
+
                 score += random.uniform(0, 6)
 
                 if score > best_score:
                     best_score = score
                     best_move = m
 
-            response = {
-                "from": best_move.get("from_notation") or best_move["from"],
-                "to": best_move.get("to_notation") or best_move["to"]
-            }
+            if best_move:
+                # Ghi nhớ nước đi gần nhất
+                bfr, bfc = best_move["from"]["r"], best_move["from"]["c"]
+                btr, btc = best_move["to"]["r"], best_move["to"]["c"]
+                last_moves.append((bfr, bfc, btr, btc))
+                if len(last_moves) > 6:
+                    last_moves.pop(0)
+
+                response = {
+                    "from": best_move.get("from_notation") or best_move["from"],
+                    "to": best_move.get("to_notation") or best_move["to"]
+                }
+            else:
+                response = {}
+
             print(json.dumps(response))
             sys.stdout.flush()
 

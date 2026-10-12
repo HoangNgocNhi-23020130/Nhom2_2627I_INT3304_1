@@ -782,3 +782,38 @@ function handleReplayFileSelected(event) {
     reader.readAsText(file);
     event.target.value = '';
 }
+
+// Xử lý nạp Replay từ URL hoặc tiếp tục nhánh thế cờ đã rẽ từ trang khác
+window.addEventListener('load', async () => {
+    // 1. Kiểm tra có nhánh rẽ ván đấu từ Replay không
+    const forkDataStr = sessionStorage.getItem('ottv2_fork_state');
+    if (forkDataStr) {
+        sessionStorage.removeItem('ottv2_fork_state');
+        try {
+            const forkData = JSON.parse(forkDataStr);
+            if (forkData && forkData.board && typeof startForkedMatch === 'function') {
+                setTimeout(() => {
+                    startForkedMatch(forkData.board, forkData.turn, forkData.title);
+                }, 300);
+                return;
+            }
+        } catch (e) {}
+    }
+
+    // 2. Kiểm tra có tham số ?replay=... trên URL không
+    const params = new URLSearchParams(window.location.search);
+    const replayUrl = params.get('replay');
+    if (replayUrl) {
+        try {
+            const resp = await fetch(replayUrl);
+            if (resp.ok) {
+                const data = await resp.json();
+                setTimeout(() => {
+                    ReplayViewer.open(data);
+                }, 400);
+            }
+        } catch (e) {
+            console.warn('Lỗi nạp replay từ URL:', e);
+        }
+    }
+});

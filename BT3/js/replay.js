@@ -348,6 +348,14 @@ const ReplayViewer = {
         // Chuyển sang màn hình chơi Offline AI bắt đầu từ thế cờ này
         if (typeof startForkedMatch === 'function') {
             startForkedMatch(currentBoard, nextTurn, `Nhánh từ ván ${this.activeReplay.p1.name} vs ${this.activeReplay.p2.name} (Nước ${this.currentStepIndex})`);
+        } else {
+            // Nếu đang ở trang khác (như leaderboard.html), lưu vào sessionStorage và chuyển sang index.html
+            sessionStorage.setItem('ottv2_fork_state', JSON.stringify({
+                board: currentBoard,
+                turn: nextTurn,
+                title: `Nhánh từ ván ${this.activeReplay.p1.name} vs ${this.activeReplay.p2.name} (Nước ${this.currentStepIndex})`
+            }));
+            window.location.href = 'index.html';
         }
     }
 };

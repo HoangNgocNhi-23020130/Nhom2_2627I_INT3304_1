@@ -23,14 +23,18 @@ Dự án không yêu cầu cài đặt dependencies phức tạp. Bạn có th�
 # Di chuyển vào thư mục BT3
 cd BT3
 
-# Khởi chạy server ở cổng 8080 (hoặc 5500, 8000)
-python3 -m http.server 8080
+# Khởi chạy máy chủ web có hỗ trợ upload bot
+python3 bot_upload_server.py
 ```
-Mở trình duyệt truy cập: `http://localhost:8080`
+Mở trình duyệt truy cập: `http://localhost:8081`. Máy chủ này phục vụ giao diện web và nhận file bot tại cùng origin.
 
 ### Cách 2: Sử dụng Live Server (VS Code / Antigravity IDE)
 1. Mở thư mục `BT3` trong VS Code hoặc Antigravity IDE.
 2. Nhấp chuột phải vào file `index.html` chọn **"Open with Live Server"**.
+3. Chạy API upload riêng bằng `python bot_upload_server.py` trong thư mục `BT3`.
+4. Mở `js/config.js` và đặt `window.BOT_UPLOAD_API_URL` thành địa chỉ API, ví dụ `http://localhost:8081/api/bots/upload`.
+
+> Trang GitHub Pages chỉ phục vụ file tĩnh nên không thể tự ghi vào `bots/`. Để bật upload trên website online, hãy triển khai `bot_upload_server.py` trên máy chủ có quyền ghi vào thư mục `BT3/bots`, đặt `BOT_UPLOAD_HOST=0.0.0.0`, `BOT_UPLOAD_PORT` và `BOT_UPLOAD_ALLOWED_ORIGINS` (danh sách origin, phân tách bằng dấu phẩy), rồi cấu hình `window.BOT_UPLOAD_API_URL` trong `js/config.js` tới endpoint HTTPS của máy chủ. Hãy giới hạn origin và dung lượng ở máy chủ; file tải lên là mã nguồn không đáng tin cậy, không chạy bot do người dùng tải lên trên máy chủ.
 
 ---
 
@@ -86,6 +90,7 @@ Hệ thống cho phép nạp bot viết bằng **Python**, **C++**, hoặc bất
 - `bots/bot_rusher.py`: Bot chạy nước rút nhanh nhất về ô đích đối phương.
 - `bots/bot_smart.py`: Bot AI công - thủ toàn diện, săn lùng loài sắp diệt chủng của đối thủ.
 - `bots/bot_template.cpp`: Mẫu chuẩn viết bằng C++ (tự động biên dịch khi chạy).
+- Người chơi có thể tải file `.py`, `.cpp` hoặc `.js` (tối đa 2 MB) lên từ sảnh; file được lưu vào `bots/`. Tên file đã tồn tại sẽ không bị ghi đè.
 
 ---
 

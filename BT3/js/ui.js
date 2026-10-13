@@ -10,6 +10,45 @@ function promptChangePlayerName() {
     }
 }
 
+function triggerUploadBot() {
+    document.getElementById('botFileInput').click();
+}
+
+async function handleBotFileSelected(event) {
+    const input = event.target;
+    const file = input.files[0];
+    if (!file) return;
+
+    const status = document.getElementById('botUploadStatus');
+    status.className = 'w-full text-xs text-sky-300';
+    status.textContent = `Đang tải ${file.name} lên...`;
+
+    const formData = new FormData();
+    formData.append('botFile', file);
+
+    try {
+        const endpoint = window.BOT_UPLOAD_API_URL || '/api/bots/upload';
+        const response = await fetch(endpoint, { method: 'POST', body: formData });
+        let result;
+        try {
+            result = await response.json();
+        } catch (error) {
+            throw new Error('Máy chủ upload không trả về phản hồi JSON hợp lệ.');
+        }
+        if (!response.ok) {
+            throw new Error(result.error || `Máy chủ từ chối file (HTTP ${response.status}).`);
+        }
+        status.className = 'w-full text-xs text-emerald-300';
+        status.textContent = `Đã tải ${result.filename} vào thư mục bots.`;
+    } catch (error) {
+        console.error('Bot upload failed:', error);
+        status.className = 'w-full text-xs text-rose-300';
+        status.textContent = `Tải bot thất bại: ${error.message}`;
+    } finally {
+        input.value = '';
+    }
+}
+
 function switchLobbyTab(tab) {
     const btnRooms = document.getElementById('tabActiveRoomsBtn');
     const btnHistory = document.getElementById('tabMatchHistoryBtn');

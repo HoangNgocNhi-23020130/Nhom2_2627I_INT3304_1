@@ -114,6 +114,17 @@ python3 run_tournament.py --timeout 0.2
 
 ---
 
+### 5. Tự động hóa giải đấu qua GitHub Actions (CI/CD - 0đ Server)
+Hệ thống được thiết lập sẵn quy trình CI/CD tại [`.github/workflows/tournament.yml`](../.github/workflows/tournament.yml):
+- **Cơ chế:** Mỗi khi có sinh viên/người chơi **Push code hoặc gửi Pull Request** thêm file bot vào thư mục `BT3/bots/` (ví dụ: `bots/bot_23020130.py` hoặc `bots/bot_sv.cpp`):
+  1. GitHub Actions sẽ tự động khởi động một máy ảo Ubuntu.
+  2. Tự động kiểm tra bot (biên dịch C++ nếu cần).
+  3. Tự động cho con bot đó thi đấu giải vòng tròn 2 lượt với tất cả các bot hiện có trong giải đấu.
+  4. Tự động commit và cập nhật Bảng xếp hạng mới nhất lên [leaderboard.html](leaderboard.html) và GitHub Pages.
+- Không cần người quản trị phải bật máy hay chấm điểm thủ công!
+
+---
+
 ## 🎬 Trình Phát & Phân Tích Replay (Replay Viewer)
 
 - **Xem lại từng nước đi:** Thanh trượt Slider tua nhanh đến bất kỳ bước nào ($0 \dots N$), nút Tới/Lùi, Nhảy về đầu/cuối.

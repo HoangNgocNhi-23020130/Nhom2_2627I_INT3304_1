@@ -5,6 +5,7 @@ Tài liệu này cung cấp hướng dẫn toàn diện từ A đến Z cho Ban 
 1. **Tổ chức giải đấu Online** (qua Cloud / VPS công khai).
 2. **Tổ chức giải đấu On-LAN** (trong phòng máy / phòng thi nội bộ, **cách ly hoàn toàn với Internet để chống gian lận**).
 3. **Cách tùy biến và sửa đổi luật chơi** (kích thước bàn, tương khắc, số quân, biến thể triệt tiêu, bàn cờ chữ thập).
+4. **Hướng dẫn lập trình Bot & Giao thức Trọng tài (Bot Protocol)** (chuẩn I/O, cấu trúc JSON, bot Python mẫu).
 
 ---
 
@@ -223,7 +224,87 @@ Engine sẽ tự động áp dụng bảng tương khắc mới vào tất cả 
 
 ---
 
-## 5. TÀI KHOẢN & THÔNG TIN MẶC ĐỊNH
+## 5. HƯỚNG DẪN LẬP TRÌNH BOT & GIAO THỨC TRỌNG TÀI (BOT PROTOCOL)
+
+Bot là một chương trình chạy trên máy chủ trọng tài, không phải chương trình giao tiếp trực tiếp với trình duyệt. Mỗi trận, tiến trình bot được khởi chạy và giữ hoạt động qua các lượt. Mỗi lượt bot nhận **một dòng JSON trên stdin**, rồi phải ghi **một dòng JSON trên stdout** và flush ngay.
+
+### 5.1. Dữ liệu bot nhận
+
+Ví dụ cấu trúc yêu cầu (bàn cờ 9 × 9, chỉ hiển thị một quân):
+
+```json
+{
+  "type": "move",
+  "turn": 1,
+  "move_count": 1,
+  "board": [
+    [null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null],
+    [null, {"owner": 1, "type": "R"}, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null]
+  ],
+  "legal_moves": [
+    {
+      "from": {"r": 7, "c": 1},
+      "to": {"r": 6, "c": 1},
+      "from_notation": "b2",
+      "to_notation": "b3",
+      "is_capture": false,
+      "target_piece": null
+    }
+  ]
+}
+```
+
+`board` là mảng hai chiều; ô trống là `null`, ô có quân là `{ "owner": 1 hoặc 2, "type": "R" | "P" | "S" }`. Danh sách `legal_moves` do engine tính sẵn, chỉ gồm nước đi hợp lệ. Một nước đi có tọa độ `from`/`to`, ký hiệu `from_notation`/`to_notation`, cờ `is_capture`, và `target_piece` (quân ở ô đích hoặc `null`). Nếu ăn quân cùng loại theo biến thể luật loại trừ lẫn nhau, nước đi có thể có thêm `is_mutual_elimination`.
+
+### 5.2. Dữ liệu bot phải trả
+
+Trả về một trong hai dạng sau, tương ứng với một nước trong `legal_moves`:
+
+```json
+{"from":"a1","to":"a2"}
+```
+
+hoặc:
+
+```json
+{"from":{"r":8,"c":0},"to":{"r":7,"c":0}}
+```
+
+Engine xác thực nước đi với danh sách hợp lệ. JSON sai, stdout rỗng, nước đi không hợp lệ, tiến trình bị dừng hoặc quá thời gian suy nghĩ sẽ khiến bot bị xử thua. Mặc định thời gian là 0,5 giây mỗi lượt (`DEFAULT_BOT_TIMEOUT` có thể cấu hình). **Không ghi log/debug ra stdout**; nếu cần, ghi ra stderr.
+
+### 5.3. Bot Python mẫu
+
+Ví dụ tối giản: ưu tiên ăn quân nếu có, nếu không chọn nước hợp lệ đầu tiên.
+
+```python
+import json
+import sys
+
+for line in sys.stdin:
+    request = json.loads(line)
+    legal_moves = request["legal_moves"]
+    captures = [move for move in legal_moves if move.get("is_capture")]
+    move = captures[0] if captures else legal_moves[0]
+
+    response = {
+        "from": move["from_notation"],
+        "to": move["to_notation"],
+    }
+    print(json.dumps(response), flush=True)
+```
+
+Lưu thành `my_bot.py`, đăng nhập giao diện người chơi, tải file lên và chọn **Đấu tập** để thử trước khi đăng ký giải. Không cần tự cài thư viện ngoài cho mẫu này. Mỗi lần lượt mới, chương trình đọc thêm một dòng JSON và phải trả lời thêm một dòng.
+
+---
+
+## 6. TÀI KHOẢN & THÔNG TIN MẶC ĐỊNH
 
 Khi chạy lệnh nạp dữ liệu mẫu (`python3 seed_data.py`), hệ thống tạo sẵn các tài khoản:
 

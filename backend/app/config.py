@@ -1,15 +1,17 @@
-from pathlib import Path
 import os
+from pathlib import Path
 
 BACKEND_DIR = Path(__file__).resolve().parent.parent
 ROOT_DIR = BACKEND_DIR.parent
 
-STORAGE_DIR = BACKEND_DIR / "storage"
+STORAGE_DIR = ROOT_DIR / "storage"
 BOTS_DIR = STORAGE_DIR / "bots"
 REPLAYS_DIR = STORAGE_DIR / "replays"
 SHARED_DIR = ROOT_DIR / "shared"
 FRONTEND_DIR = ROOT_DIR / "frontend"
+
 RULES_FILE = SHARED_DIR / "rules.json"
+RULES_PATH = RULES_FILE
 
 BOTS_DIR.mkdir(parents=True, exist_ok=True)
 REPLAYS_DIR.mkdir(parents=True, exist_ok=True)

@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTTv2 ARENA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="min-h-screen flex flex-col justify-between font-sans bg-slate-950 text-slate-100">
+
+    <header class="w-full glass-panel sticky top-0 z-30 px-4 md:px-8 py-3 border-b border-slate-800 shadow-xl">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-sky-500 to-indigo-500 flex items-center justify-center font-bold text-base shadow-lg shadow-sky-500/20">
+                    ✌️
+                </div>
+                <div>
+                    <h1 class="text-base md:text-lg font-black bg-gradient-to-r from-sky-400 via-indigo-200 to-rose-400 bg-clip-text text-transparent">
+                        OTTv2 ARENA
+                    </h1>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-3" id="headerAuthArea">
+                <div class="flex items-center gap-2 bg-slate-900 border border-slate-700 px-3 py-1.5 rounded-xl text-xs">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    <span id="headerUsername" class="font-bold text-sky-400">Đang tải...</span>
+                </div>
+                <button onclick="handleLogout()" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-rose-950/80 hover:text-rose-300 text-slate-400 text-xs font-bold transition">
+                    Đăng Xuất
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto w-full px-4 md:px-8 pt-5">
+        <div class="flex flex-wrap items-center gap-2 border-b border-slate-800 pb-2">
+            <button id="tabBtnCode" onclick="switchPlayerTab('code')" class="tab-btn px-4 py-2 rounded-xl font-bold text-xs transition-all flex items-center gap-2 bg-sky-600 text-white shadow-lg">
+                <i class="fa-solid fa-code"></i> Quản lý code
+            </button>
+            <button id="tabBtnPractice" onclick="switchPlayerTab('practice')" class="tab-btn px-4 py-2 rounded-xl font-bold text-xs transition-all flex items-center gap-2 bg-slate-800 text-slate-400 hover:text-white">
+                <i class="fa-solid fa-vial"></i> Đấu tập
+            </button>
+            <button id="tabBtnTournaments" onclick="switchPlayerTab('tournaments')" class="tab-btn px-4 py-2 rounded-xl font-bold text-xs transition-all flex items-center gap-2 bg-slate-800 text-slate-400 hover:text-white">
+                <i class="fa-solid fa-trophy"></i> Đăng ký giải đấu
+            </button>
+            <button id="tabBtnLeaderboard" onclick="switchPlayerTab('leaderboard')" class="tab-btn px-4 py-2 rounded-xl font-bold text-xs transition-all flex items-center gap-2 bg-slate-800 text-slate-400 hover:text-white">
+                <i class="fa-solid fa-ranking-star"></i> Bảng xếp hạng
+            </button>
+        </div>
+    </div>
+
+    <main class="max-w-7xl mx-auto w-full flex-1 p-4 md:p-8 flex flex-col gap-6">
+
+        <section id="viewCode" class="space-y-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <div class="lg:col-span-5 glass-panel p-5 rounded-2xl border border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-sm font-black text-white flex items-center gap-2 mb-2">
+                            <i class="fa-solid fa-cloud-arrow-up text-sky-400"></i> Nộp Code Bot Mới
+                        </h2>
+                        <p class="text-xs text-slate-400 mb-4">Hỗ trợ file Python (.py), C++ (.cpp tự biên dịch), hoặc JS (.js).</p>
+                        <div class="space-y-3">
+                            <input type="file" id="uploadFile" accept=".py,.cpp,.js" class="w-full text-xs text-slate-400 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-sky-600 file:text-white hover:file:bg-sky-500 cursor-pointer">
+                        </div>
+                    </div>
+                    <div class="mt-5 pt-3 border-t border-slate-800 flex items-center justify-between">
+                        <button id="btnSubmitUpload" onclick="handleUploadBot()" class="px-4 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 font-bold text-white text-xs shadow-lg transition">
+                            Tải Lên Bot
+                        </button>
+                        <span id="uploadStatusText" class="text-xs font-medium text-slate-400"></span>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 glass-panel p-5 rounded-2xl border border-slate-800 flex flex-col">
+                    <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800">
+                        <div>
+                            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200">Kho Code Của Bạn</h3>
+                            <p class="text-[10px] text-slate-400">Chọn 1 bot thi đấu, đổi tên hoặc xóa bot không dùng</p>
+                        </div>
+                        <button onclick="loadMyBots(true)" class="text-xs text-slate-400 hover:text-sky-400"><i class="fa-solid fa-rotate"></i> Làm mới</button>
+                    </div>
+                    <div id="myBotsGrid" class="space-y-2.5 max-h-[360px] overflow-y-auto pr-1"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="viewPractice" class="space-y-6 hidden">
+            <div class="glass-panel p-6 rounded-2xl border border-slate-800 max-w-3xl mx-auto shadow-2xl">
+                <div class="text-center mb-6">
+                    <h2 class="text-lg font-black text-white flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-vial text-amber-400"></i> Đấu Tập Kiểm Thử Thuật Toán
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-1">Đưa bot của bạn ra sân cờ 9x9 thi đấu thử với các bot chuẩn của hệ thống.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div class="p-4 bg-slate-900/80 rounded-xl border border-sky-500/40 space-y-2">
+                        <label class="block text-xs font-bold text-sky-400 uppercase tracking-wider">Bot Của Bạn (Quân Xanh - P1)</label>
+                        <div id="practiceActiveBotDisplay" class="text-xs text-slate-300 font-bold p-2.5 bg-slate-950 rounded-xl border border-slate-800">
+                            Chưa chọn bot thi đấu
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-slate-900/80 rounded-xl border border-rose-500/40 space-y-2">
+                        <label class="block text-xs font-bold text-rose-400 uppercase tracking-wider">Đối Thủ Hệ Thống (Quân Đỏ - P2)</label>
+                        <select id="selectSystemBot" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-2.5 text-xs text-white font-bold"></select>
+                    </div>
+                </div>
+
+                <div class="mt-6 text-center">
+                    <button id="btnRunPractice" onclick="handleRunPracticeMatch()" class="px-6 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 font-black text-white text-xs shadow-lg shadow-amber-500/20 transition">
+                        ⚔️ BẮT ĐẦU ĐẤU THỬ NGHIỆM
+                    </button>
+                </div>
+
+                <div id="practiceResultBox" class="mt-6 p-4 rounded-xl glass-card border border-slate-700 hidden">
+                    <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-800">
+                        <span class="text-xs font-bold text-amber-400">Kết Quả Ván Đấu</span>
+                        <span id="practiceMovesBadge" class="text-xs font-mono text-slate-400">--</span>
+                    </div>
+                    <div class="space-y-1 mb-3">
+                        <h4 id="practiceWinnerText" class="text-sm font-extrabold text-white"></h4>
+                        <p id="practiceReasonText" class="text-xs text-slate-300"></p>
+                    </div>
+                    <button id="btnOpenPracticeReplay" class="w-full py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs transition">
+                        Xem Chi Tiết Replay Ván Đấu
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="viewTournaments" class="space-y-6 hidden">
+            <div class="glass-panel p-5 rounded-2xl border border-slate-800 space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-800">
+                    <div>
+                        <h2 class="text-sm font-black text-white flex items-center gap-2">
+                            <i class="fa-solid fa-trophy text-amber-400"></i> Đấu Trường Giải Đấu
+                        </h2>
+                        <p class="text-xs text-slate-400 mt-0.5">Sử dụng Bot thi đấu chính thức hiện tại để tham gia tranh tài.</p>
+                    </div>
+
+                    <div class="flex items-center gap-1.5 bg-slate-900 p-1 rounded-xl border border-slate-800">
+                        <button id="subTabOpenTours" onclick="switchTourSubTab('open')" class="px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 bg-sky-600 text-white shadow-md">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Giải Đang Mở
+                        </button>
+                        <button id="subTabJoinedTours" onclick="switchTourSubTab('joined')" class="px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 text-slate-400 hover:text-white">
+                            <i class="fa-solid fa-circle-check text-xs"></i> Giải Đã Tham Gia
+                        </button>
+                    </div>
+                </div>
+
+                <div id="subViewOpenTours" class="space-y-3">
+                    <div id="playerOpenTournamentsList" class="space-y-3"></div>
+                </div>
+
+                <div id="subViewJoinedTours" class="space-y-3 hidden">
+                    <div id="playerJoinedTournamentsList" class="space-y-3"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="viewLeaderboard" class="space-y-4 hidden"></section>
+    </main>
+
+    <div id="tournamentMatchesModal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 flex items-center justify-center p-3 md:p-6 hidden">
+        <div class="glass-panel max-w-4xl w-full rounded-2xl p-5 border border-slate-700 shadow-2xl space-y-4 max-h-[90vh] flex flex-col">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                <h3 id="tourMatchesModalTitle" class="text-sm font-extrabold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-gamepad text-sky-400"></i> Danh Sách Trận Đấu
+                </h3>
+                <button onclick="closeTournamentMatchesModal()" class="w-7 h-7 rounded-lg bg-slate-800 text-slate-300 flex items-center justify-center hover:bg-slate-700"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="flex flex-wrap items-center justify-between gap-3 bg-slate-900/60 p-3 rounded-xl border border-slate-800 text-xs">
+                <div class="relative w-60">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-500 text-xs"></i>
+                    <input type="text" id="matchSearchInput" oninput="debounceMatchSearch()" placeholder="Tìm người chơi, bot..." class="w-full pl-8 pr-3 py-1.5 bg-slate-950 border border-slate-700 rounded-xl text-xs text-white focus:outline-none focus:border-sky-400">
+                </div>
+                
+                <div class="flex flex-wrap items-center gap-3">
+                    <div class="flex items-center gap-1.5">
+                        <span class="text-slate-400 font-medium">Lượt:</span>
+                        <select id="matchRoundSelect" onchange="loadTournamentMatches()" class="bg-slate-950 border border-slate-700 rounded-lg px-2.5 py-1 text-white font-bold text-xs focus:outline-none">
+                            <option value="">Tất Cả</option>
+                            <option value="1">Lượt đi (Vòng 1)</option>
+                            <option value="2">Lượt về (Vòng 2)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="flex items-center gap-1.5">
+                        <span class="text-slate-400 font-medium">Thời gian:</span>
+                        <select id="matchOrderSelect" onchange="loadTournamentMatches()" class="bg-slate-950 border border-slate-700 rounded-lg px-2.5 py-1 text-white font-bold text-xs focus:outline-none">
+                            <option value="asc">Cũ nhất trước</option>
+                            <option value="desc">Mới nhất trước</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overflow-y-auto flex-1">
+                <table class="w-full text-left text-xs">
+                    <thead>
+                        <tr class="border-b border-slate-800 text-slate-400 uppercase text-[10px] bg-slate-900/60 sticky top-0">
+                            <th class="py-2.5 px-3 w-12">Trận</th>
+                            <th class="py-2.5 px-3 w-20">Lượt</th>
+                            <th class="py-2.5 px-3 min-w-[200px]">Cặp Đấu (P1 vs P2)</th>
+                            <th class="py-2.5 px-3 min-w-[180px]">Kết Quả</th>
+                            <th class="py-2.5 px-3 text-center w-24">Số Nước</th>
+                            <th class="py-2.5 px-3 text-right w-28">Xem Replay</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tourMatchesModalTbody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="tournamentStandingsModal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="glass-panel max-w-2xl w-full rounded-2xl p-5 border border-slate-700 shadow-2xl space-y-4 max-h-[85vh] flex flex-col">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                <h3 id="tourStandingsModalTitle" class="text-sm font-extrabold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-list-ol text-amber-400"></i> Bảng Điểm Giải Đấu
+                </h3>
+                <button onclick="closeTournamentStandingsModal()" class="w-7 h-7 rounded-lg bg-slate-800 text-slate-300 flex items-center justify-center hover:bg-slate-700"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="overflow-y-auto flex-1">
+                <table class="w-full text-left text-xs">
+                    <thead>
+                        <tr class="border-b border-slate-800 text-slate-400 uppercase text-[10px] bg-slate-900/60 sticky top-0">
+                            <th class="py-2.5 px-3">Hạng</th>
+                            <th class="py-2.5 px-3">Tên Bot</th>
+                            <th class="py-2.5 px-3 text-center">Trận</th>
+                            <th class="py-2.5 px-3 text-center">Thắng</th>
+                            <th class="py-2.5 px-3 text-center">Hòa</th>
+                            <th class="py-2.5 px-3 text-center">Bại</th>
+                            <th class="py-2.5 px-3 text-right">Tổng Điểm</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tourStandingsModalTbody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="editBotModal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="glass-panel max-w-sm w-full rounded-2xl p-5 border border-slate-700 shadow-2xl space-y-4">
+            <div class="flex items-center justify-between pb-2 border-b border-slate-800">
+                <h3 class="text-sm font-bold text-white flex items-center gap-1.5">
+                    <i class="fa-solid fa-pen text-amber-400"></i> Đổi Tên Bot
+                </h3>
+                <button onclick="closeEditBotModal()" class="w-7 h-7 rounded-lg bg-slate-800 text-slate-300 flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <input type="hidden" id="editBotId">
+            <div>
+                <label class="block text-xs text-slate-300 font-semibold mb-1">Tên mới của bot:</label>
+                <input type="text" id="editBotNameInput" class="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded-xl text-xs text-white focus:outline-none focus:border-sky-500">
+            </div>
+            <button onclick="handleSaveEditBot()" class="w-full py-2 rounded-xl bg-sky-600 hover:bg-sky-500 font-bold text-white text-xs transition">
+                Lưu Thay Đổi
+            </button>
+        </div>
+    </div>
+
+    <div id="authModal" class="fixed inset-0 bg-slate-950/90 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="glass-panel max-w-sm w-full rounded-2xl p-6 border border-slate-700 shadow-2xl space-y-4">
+            <div class="text-center">
+                <div class="w-12 h-12 mx-auto rounded-2xl bg-gradient-to-tr from-sky-500 to-indigo-500 flex items-center justify-center text-xl mb-3 shadow-lg">
+                    ✌️
+                </div>
+                <h3 id="authModalTitle" class="text-lg font-black text-white">Đăng Nhập OTTv2 Arena</h3>
+                <p id="authModalSub" class="text-xs text-slate-400 mt-1">Đăng nhập tài khoản để vào phòng thi đấu</p>
+            </div>
+
+            <div class="space-y-3">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Tên tài khoản:</label>
+                    <input type="text" id="authUsername" placeholder="VD: player1 hoặc admin" class="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded-xl text-xs text-white focus:outline-none focus:border-sky-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Mật khẩu:</label>
+                    <input type="password" id="authPassword" placeholder="••••••" class="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded-xl text-xs text-white focus:outline-none focus:border-sky-500">
+                </div>
+            </div>
+
+            <div id="authErrorText" class="text-xs font-bold text-rose-400 text-center min-h-[16px]"></div>
+
+            <button id="btnAuthSubmit" onclick="handleAuthSubmit()" class="w-full py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 font-bold text-white text-xs shadow-lg transition">
+                Đăng Nhập
+            </button>
+
+            <div class="text-center pt-2 border-t border-slate-800">
+                <button id="btnToggleAuthMode" onclick="toggleAuthMode()" class="text-xs text-sky-400 hover:underline">
+                    Chưa có tài khoản? Đăng ký ngay
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="replayViewerModal" class="fixed inset-0 bg-slate-950/90 backdrop-blur-md z-50 flex items-center justify-center p-3 md:p-6 hidden">
+        <div class="glass-panel max-w-4xl w-full max-h-[95vh] rounded-2xl p-4 md:p-6 border border-slate-700 shadow-2xl flex flex-col gap-3 overflow-hidden">
+            <div class="flex items-center justify-between pb-2 border-b border-slate-800">
+                <div>
+                    <h3 id="replayTitle" class="font-extrabold text-base text-white"></h3>
+                    <p id="replayMeta" class="text-xs text-slate-400 mt-0.5 font-medium"></p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button onclick="ReplayViewer.downloadJSON()" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-bold hover:bg-slate-700">Tải JSON</button>
+                    <button onclick="ReplayViewer.close()" class="w-8 h-8 rounded-lg bg-slate-800 text-slate-300 flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <div class="flex-1 flex flex-col md:flex-row items-center justify-center gap-5 overflow-y-auto py-2">
+                <div class="w-full max-w-sm md:max-w-md aspect-square bg-slate-950 p-2 rounded-2xl border border-slate-800 shadow-2xl flex flex-col">
+                    <div id="replayBoardGrid" class="grid grid-cols-9 gap-1 flex-1"></div>
+                </div>
+
+                <div class="w-full md:w-64 flex flex-col gap-3">
+                    <div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800">
+                        <div class="flex items-center justify-between mb-1.5">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase">Diễn biến</span>
+                            <span id="replayStepBadge" class="px-2 py-0.5 rounded bg-slate-800 text-sky-300 font-mono text-xs font-bold"></span>
+                        </div>
+                        <div id="replayCurrentActionText" class="text-xs text-slate-200 min-h-[36px] flex items-center"></div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 text-center text-xs">
+                        <div class="p-2.5 rounded-xl bg-sky-950/40 border border-sky-500/30">
+                            <span class="text-[10px] text-sky-400 font-bold block mb-1">Quân P1</span>
+                            <span id="replayP1Counts" class="font-mono text-white text-xs font-bold"></span>
+                        </div>
+                        <div class="p-2.5 rounded-xl bg-rose-950/40 border border-rose-500/30">
+                            <span class="text-[10px] text-rose-400 font-bold block mb-1">Quân P2</span>
+                            <span id="replayP2Counts" class="font-mono text-white text-xs font-bold"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 flex flex-col gap-2">
+                <input type="range" id="replayStepSlider" min="0" max="100" value="0" oninput="ReplayViewer.renderStep(parseInt(this.value, 10))" class="accent-sky-500 cursor-pointer">
+                <div class="flex flex-wrap items-center justify-between gap-2 pt-1">
+                    <div class="flex items-center gap-1.5">
+                        <button onclick="ReplayViewer.first()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-bold"><i class="fa-solid fa-backward-step"></i></button>
+                        <button onclick="ReplayViewer.prev()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-bold"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button id="replayPlayBtn" onclick="ReplayViewer.togglePlay()" class="px-4 py-1.5 rounded-lg bg-sky-600 text-white text-xs font-bold shadow"><i class="fa-solid fa-play"></i> Tự Động Phát</button>
+                        <button onclick="ReplayViewer.next()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-bold"><i class="fa-solid fa-chevron-right"></i></button>
+                        <button onclick="ReplayViewer.last()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-bold"><i class="fa-solid fa-forward-step"></i></button>
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <span class="text-[11px] text-slate-400 mr-1">Tốc độ:</span>
+                        <button id="speedBtn-1200" onclick="ReplayViewer.setSpeed(1200)" class="speed-btn px-2 py-1 rounded-lg text-xs bg-slate-800 text-slate-300 font-bold">0.5x</button>
+                        <button id="speedBtn-600" onclick="ReplayViewer.setSpeed(600)" class="speed-btn px-2 py-1 rounded-lg text-xs bg-sky-600 text-white font-bold shadow">1x</button>
+                        <button id="speedBtn-200" onclick="ReplayViewer.setSpeed(200)" class="speed-btn px-2 py-1 rounded-lg text-xs bg-slate-800 text-slate-300 font-bold">2x</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/replay.js"></script>
+    <script src="/static/js/leaderboard.js"></script>
+    <script>
+        let currentUser = null;
+        let myActiveBot = null;
+        let myBotsCache = [];
+        let isRegisterMode = false;
+        let lastPracticeReplayUrl = null;
+        let currentTourSubTab = 'open';
+        let myJoinedTourIds = new Set();
+        let tournamentsMap = {};
+        let currentViewingTourId = null;
+        let matchSearchDebounceTimer = null;
+
+        function preloadAppData() {
+            Promise.allSettled([
+                API.getTournaments(),
+                API.getMyTournaments(),
+                API.getSystemBots(),
+                API.getLeaderboard('all'),
+                API.getLeaderboard('week'),
+                API.getLeaderboard('month')
+            ]);
+        }
+
+        async function checkAuth() {
+            try {
+                currentUser = await API.getMe();
+                window.currentUser = currentUser;
+                if (currentUser?.username) {
+                    localStorage.setItem('ott_username', currentUser.username);
+                }
+                if (currentUser.role === 'admin') {
+                    window.location.replace('/admin');
+                    return;
+                }
+                document.getElementById('headerUsername').innerText = `${currentUser.username}`;
+                document.getElementById('authModal').classList.add('hidden');
+                loadMyBots();
+                preloadAppData();
+            } catch (err) {
+                document.getElementById('authModal').classList.remove('hidden');
+                if (err.message && err.message.includes('khóa')) {
+                    document.getElementById('authErrorText').innerText = err.message;
+                }
+            }
+        }
+
+        function toggleAuthMode() {
+            isRegisterMode = !isRegisterMode;
+            document.getElementById('authModalTitle').innerText = isRegisterMode ? 'Đăng Ký Tài Khoản' : 'Đăng Nhập OTTv2 Arena';
+            document.getElementById('authModalSub').innerText = isRegisterMode ? 'Tạo tài khoản người chơi mới' : 'Đăng nhập tài khoản để vào phòng thi đấu';
+            document.getElementById('btnAuthSubmit').innerText = isRegisterMode ? 'Đăng Ký' : 'Đăng Nhập';
+            document.getElementById('btnToggleAuthMode').innerText = isRegisterMode ? 'Đã có tài khoản? Đăng nhập' : 'Chưa có tài khoản? Đăng ký ngay';
+            document.getElementById('authErrorText').innerText = '';
+        }
+
+        async function handleAuthSubmit() {
+            const u = document.getElementById('authUsername').value.trim();
+            const p = document.getElementById('authPassword').value;
+            const errEl = document.getElementById('authErrorText');
+            errEl.innerText = '';
+
+            try {
+                const res = isRegisterMode ? await API.register(u, p) : await API.login(u, p);
+                if (res.user && res.user.role === 'admin') {
+                    window.location.replace('/admin');
+                    return;
+                }
+                checkAuth();
+            } catch (err) {
+                errEl.innerText = err.message;
+            }
+        }
+
+        function handleLogout() {
+            API.removeToken();
+            window.location.reload();
+        }
+
+        function switchPlayerTab(tabId) {
+            ['code', 'practice', 'tournaments', 'leaderboard'].forEach(t => {
+                document.getElementById(`view${t.charAt(0).toUpperCase() + t.slice(1)}`).classList.toggle('hidden', t !== tabId);
+                const btn = document.getElementById(`tabBtn${t.charAt(0).toUpperCase() + t.slice(1)}`);
+                btn.className = (t === tabId)
+                    ? 'tab-btn px-4 py-2 rounded-xl font-bold text-xs transition-all flex items-center gap-2 bg-sky-600 text-white shadow-lg'
+                    : 'tab-btn px-4 py-2 rounded-xl font-bold text-xs transition-all flex items-center gap-2 bg-slate-800 text-slate-400 hover:text-white';
+            });
+
+            if (tabId === 'code') loadMyBots();
+            if (tabId === 'practice') loadPracticeView();
+            if (tabId === 'tournaments') loadTournamentsForPlayer();
+            if (tabId === 'leaderboard') Leaderboard.mount('viewLeaderboard');
+        }
+
+        function renderMyBotsGrid() {
+            const grid = document.getElementById('myBotsGrid');
+            if (!myBotsCache || myBotsCache.length === 0) {
+                grid.innerHTML = '<div class="text-center py-6 text-slate-500 text-xs italic">Bạn chưa nộp bot nào. Hãy nộp code đầu tiên ở khung bên trái!</div>';
+                return;
+            }
+
+            window.myBotNames = new Set((myBotsCache || []).map(b => (b.name || '').trim().toLowerCase()));
+
+            grid.innerHTML = myBotsCache.map(b => {
+                const activeBtnHtml = b.is_active 
+                    ? '<span class="text-emerald-400 text-[11px] font-bold px-2.5 py-1 bg-emerald-950/40 rounded-lg border border-emerald-500/30 flex items-center gap-1"><i class="fa-solid fa-check"></i> Đang Chọn</span>'
+                    : '<button type="button" onclick="handleSetActive(' + b.id + ')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-sky-600 text-slate-300 hover:text-white text-[11px] font-bold transition">Chọn Đấu</button>';
+
+                const safeName = (b.name || '').replace(/'/g, "\\'");
+                const editBtnHtml = '<button type="button" onclick="openEditBotModal(' + b.id + ', \'' + safeName + '\')" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] font-bold transition" title="Đổi tên bot"><i class="fa-solid fa-pen"></i></button>';
+                const deleteBtnHtml = '<button type="button" onclick="handleDeleteBot(' + b.id + ', \'' + safeName + '\')" class="px-2 py-1 rounded-lg bg-rose-950/80 hover:bg-rose-900 border border-rose-500/30 text-rose-300 text-[11px] font-bold transition" title="Xóa bot"><i class="fa-solid fa-trash"></i></button>';
+
+                return `
+                <div class="glass-card p-3 rounded-xl border ${b.is_active ? 'border-emerald-500/60 bg-emerald-950/20' : 'border-slate-800'} flex items-center justify-between transition-all">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h4 class="font-bold text-xs text-white">${b.name}</h4>
+                            <span class="px-1.5 py-0.5 rounded text-[9px] font-bold uppercase bg-slate-800 text-sky-300">${b.language}</span>
+                            ${b.is_active ? '<span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">⚔️ ĐANG THI ĐẤU</span>' : ''}
+                        </div>
+                        <p class="text-[10px] text-slate-400 mt-0.5">Nộp lúc: <strong class="text-slate-300 font-mono">${b.created_at || ''}</strong></p>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                        ${activeBtnHtml}
+                        ${editBtnHtml}
+                        ${deleteBtnHtml}
+                    </div>
+                </div>`;
+            }).join('');
+
+            if (typeof loadPracticeView === 'function') {
+                loadPracticeView();
+            }
+        }
+
+        async function loadMyBots(forceRefresh = false) {
+            const grid = document.getElementById('myBotsGrid');
+            try {
+                myBotsCache = await API.getMyBots(forceRefresh);
+                window.myBotNames = new Set((myBotsCache || []).map(b => (b.name || '').trim().toLowerCase()));
+                myActiveBot = myBotsCache.find(b => b.is_active) || null;
+                renderMyBotsGrid();
+            } catch (err) {
+                grid.innerHTML = `<div class="text-center text-rose-400 text-xs py-4">${err.message}</div>`;
+            }
+        }
+
+        async function handleSetActive(botId) {
+            const previousBots = JSON.parse(JSON.stringify(myBotsCache));
+            myBotsCache.forEach(b => {
+                b.is_active = (b.id === botId);
+            });
+            myActiveBot = myBotsCache.find(b => b.id === botId) || null;
+            renderMyBotsGrid();
+
+            try {
+                await API.setActiveBot(botId);
+            } catch (err) {
+                myBotsCache = previousBots;
+                myActiveBot = myBotsCache.find(b => b.is_active) || null;
+                renderMyBotsGrid();
+                alert("Lỗi kích hoạt: " + err.message);
+            }
+        }
+
+        function openEditBotModal(botId, currentName) {
+            document.getElementById('editBotId').value = botId;
+            document.getElementById('editBotNameInput').value = currentName;
+            document.getElementById('editBotModal').classList.remove('hidden');
+        }
+
+        function closeEditBotModal() {
+            document.getElementById('editBotModal').classList.add('hidden');
+        }
+
+        async function handleSaveEditBot() {
+            const botId = document.getElementById('editBotId').value;
+            const newName = document.getElementById('editBotNameInput').value.trim();
+            if (!newName) return alert('Vui lòng nhập tên mới cho bot!');
+
+            try {
+                const res = await API.updateBot(botId, newName);
+                alert(res.message);
+                closeEditBotModal();
+                loadMyBots(true);
+            } catch (err) {
+                alert(err.message);
+            }
+        }
+
+        async function handleDeleteBot(botId, botName) {
+            if (!confirm(`Bạn có chắc muốn xóa bot '${botName}' khỏi hệ thống không?`)) return;
+            try {
+                const res = await API.deleteBot(botId);
+                alert(res.message);
+                loadMyBots(true);
+            } catch (err) {
+                alert(err.message);
+            }
+        }
+
+        async function handleUploadBot() {
+            const fileInput = document.getElementById('uploadFile');
+            const statusText = document.getElementById('uploadStatusText');
+            if (!fileInput.files.length) return alert('Vui lòng chọn file bot!');
+
+            statusText.innerText = 'Đang tải lên & biên dịch...';
+            try {
+                const res = await API.uploadBot(fileInput.files[0]);
+                statusText.innerText = `✅ ${res.message}`;
+                fileInput.value = '';
+                loadMyBots(true);
+            } catch (err) {
+                statusText.innerText = `❌ ${err.message}`;
+            }
+        }
+
+        async function loadPracticeView() {
+            const activeDisp = document.getElementById('practiceActiveBotDisplay');
+            if (myActiveBot) {
+                activeDisp.innerHTML = `<span class="text-sky-400 font-bold">${myActiveBot.name}</span> (${myActiveBot.language.toUpperCase()})`;
+            } else {
+                activeDisp.innerHTML = `<span class="text-rose-400 italic">Chưa chọn bot thi đấu. Hãy sang tab 'Quản lý code' để chọn!</span>`;
+            }
+
+            const sysSel = document.getElementById('selectSystemBot');
+            try {
+                const sysBots = await API.getSystemBots();
+                sysSel.innerHTML = sysBots.map(b => `<option value="${b.id}">${b.name} (Hệ thống)</option>`).join('');
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        async function handleRunPracticeMatch() {
+            if (!myActiveBot) return alert('Bạn cần kích hoạt 1 bot ở trạng thái thi đấu trước!');
+            const sysBotId = document.getElementById('selectSystemBot').value;
+            const btn = document.getElementById('btnRunPractice');
+            const resBox = document.getElementById('practiceResultBox');
+
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-1"></i> Đang Đấu Tập...';
+            resBox.classList.add('hidden');
+
+            try {
+                const data = await API.runQuickMatch(myActiveBot.id, sysBotId);
+                lastPracticeReplayUrl = data.replay_url;
+
+                document.getElementById('practiceWinnerText').innerText = `🏆 Kết quả: ${data.result.winner_name}`;
+                document.getElementById('practiceReasonText').innerText = data.result.reason;
+                document.getElementById('practiceMovesBadge').innerText = `${data.result.moves} nước • ${data.result.duration_sec}s`;
+
+                document.getElementById('btnOpenPracticeReplay').onclick = async () => {
+                    const replayData = await API.getReplay(lastPracticeReplayUrl);
+                    ReplayViewer.open(replayData);
+                };
+                resBox.classList.remove('hidden');
+            } catch (err) {
+                alert(err.message);
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '⚔️ BẮT ĐẦU ĐẤU THỬ NGHIỆM';
+            }
+        }
+
+        function switchTourSubTab(subTab) {
+            currentTourSubTab = subTab;
+            const isOpen = subTab === 'open';
+
+            document.getElementById('subViewOpenTours').classList.toggle('hidden', !isOpen);
+            document.getElementById('subViewJoinedTours').classList.toggle('hidden', isOpen);
+
+            const tabOpenBtn = document.getElementById('subTabOpenTours');
+            const tabJoinedBtn = document.getElementById('subTabJoinedTours');
+
+            if (isOpen) {
+                tabOpenBtn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 bg-sky-600 text-white shadow-md';
+                tabJoinedBtn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 text-slate-400 hover:text-white';
+                loadOpenTournaments();
+            } else {
+                tabOpenBtn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 text-slate-400 hover:text-white';
+                tabJoinedBtn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 bg-sky-600 text-white shadow-md';
+                loadJoinedTournaments();
+            }
+        }
+
+        async function loadTournamentsForPlayer() {
+            try {
+                const myTours = await API.getMyTournaments();
+                myJoinedTourIds = new Set((myTours || []).map(t => t.id));
+                (myTours || []).forEach(t => { tournamentsMap[t.id] = t; });
+            } catch (e) {
+                myJoinedTourIds = new Set();
+            }
+
+            if (currentTourSubTab === 'open') {
+                loadOpenTournaments();
+            } else {
+                loadJoinedTournaments();
+            }
+        }
+
+        async function loadOpenTournaments() {
+            const listEl = document.getElementById('playerOpenTournamentsList');
+            listEl.innerHTML = '<div class="text-center py-6 text-slate-500 text-xs italic"><i class="fa-solid fa-spinner fa-spin mr-1"></i> Đang tải các giải đấu mở...</div>';
+
+            try {
+                const allTours = await API.getTournaments();
+                (allTours || []).forEach(t => { tournamentsMap[t.id] = t; });
+                const openTours = (allTours || []).filter(t => t.status === 'open');
+
+                if (openTours.length === 0) {
+                    listEl.innerHTML = '<div class="text-center py-8 text-slate-500 text-xs italic">Hiện tại không có giải đấu nào đang mở đăng ký. Vui lòng quay lại sau!</div>';
+                    return;
+                }
+
+                listEl.innerHTML = openTours.map(t => {
+                    const isJoined = myJoinedTourIds.has(t.id);
+                    const actionBtn = isJoined
+                        ? `<span class="px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-950/60 text-emerald-400 border border-emerald-500/30 flex items-center gap-1.5"><i class="fa-solid fa-circle-check"></i> Đã Đăng Ký</span>`
+                        : `<button onclick="handleRegisterTour(${t.id})" class="px-3.5 py-1.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs transition shadow-md flex items-center gap-1"><i class="fa-solid fa-plus"></i> Đăng Ký Tham Gia</button>`;
+
+                    return `
+                    <div class="glass-card p-4 rounded-xl border border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h4 class="font-extrabold text-white text-sm">${t.name}</h4>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">Mở Đăng Ký</span>
+                            </div>
+                            <p class="text-[10px] text-slate-400 mt-1">
+                                ⏰ Khởi tranh lúc: <strong class="text-amber-300 font-mono">${t.start_time}</strong> • 
+                                Đã đăng ký: <strong class="text-sky-300 font-bold">${t.registered_count} người</strong> •
+                                Tạo bởi: ${t.created_by}
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            ${actionBtn}
+                        </div>
+                    </div>`;
+                }).join('');
+            } catch (err) {
+                listEl.innerHTML = `<div class="text-rose-400 text-xs py-4">${err.message}</div>`;
+            }
+        }
+
+        async function loadJoinedTournaments() {
+            const listEl = document.getElementById('playerJoinedTournamentsList');
+            listEl.innerHTML = '<div class="text-center py-6 text-slate-500 text-xs italic"><i class="fa-solid fa-spinner fa-spin mr-1"></i> Đang tải các giải bạn đã tham gia...</div>';
+
+            try {
+                const joinedTours = await API.getMyTournaments();
+
+                if (!joinedTours || joinedTours.length === 0) {
+                    listEl.innerHTML = `
+                        <div class="text-center py-8 text-slate-500 text-xs italic">
+                            Bạn chưa đăng ký tham gia giải đấu nào.<br>
+                            Hãy chuyển sang mục <button onclick="switchTourSubTab('open')" class="text-sky-400 underline font-bold">Giải Đang Mở</button> để ghi danh bot của bạn!
+                        </div>`;
+                    return;
+                }
+
+                (joinedTours || []).forEach(t => { tournamentsMap[t.id] = t; });
+
+                listEl.innerHTML = joinedTours.map(t => {
+                    let statusBadge = '';
+                    if (t.status === 'open') {
+                        statusBadge = '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">Chờ Khởi Tranh</span>';
+                    } else if (t.status === 'running') {
+                        statusBadge = '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-sky-500/10 text-sky-400 border border-sky-500/20 animate-pulse">Đang Thi Đấu</span>';
+                    } else if (t.status === 'completed') {
+                        statusBadge = '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-400">Đã Hoàn Thành</span>';
+                    } else {
+                        statusBadge = '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-500/10 text-rose-400">Đã Hủy</span>';
+                    }
+
+                    const botName = t.my_bot?.name || 'Chưa rõ';
+                    const botLang = (t.my_bot?.language || 'N/A').toUpperCase();
+                    const botInfo = t.my_bot
+                        ? `<span class="text-emerald-400 font-bold">⚔️ ${botName}</span> (${botLang})`
+                        : `<span class="text-slate-500">Chưa rõ</span>`;
+
+                    let scoreInfo = '';
+                    if (t.my_standing && (t.status === 'running' || t.status === 'completed')) {
+                        scoreInfo = `
+                            <div class="text-[11px] font-mono text-slate-300 bg-slate-900 px-2 py-1 rounded-lg border border-slate-800">
+                                Thắng: <strong class="text-emerald-400">${t.my_standing.won}</strong> | 
+                                Hòa: <strong class="text-amber-400">${t.my_standing.drawn}</strong> | 
+                                Bại: <strong class="text-rose-400">${t.my_standing.lost}</strong> • 
+                                Điểm: <strong class="text-amber-300 font-bold">${t.my_standing.points}</strong>
+                            </div>`;
+                    }
+
+                    return `
+                    <div class="glass-card p-4 rounded-xl border border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
+                        <div class="space-y-1">
+                            <div class="flex items-center gap-2">
+                                <h4 class="font-extrabold text-white text-sm">${t.name}</h4>
+                                ${statusBadge}
+                            </div>
+                            <p class="text-[10px] text-slate-400">
+                                ⏰ Khởi tranh lúc: <strong class="text-amber-300 font-mono">${t.start_time}</strong> • 
+                                Bot tham gia: ${botInfo}
+                            </p>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            ${scoreInfo}
+                            <button onclick="openTournamentMatchesModal(${t.id})" class="px-3 py-1.5 rounded-lg bg-sky-950/80 hover:bg-sky-800 border border-sky-500/30 text-sky-300 font-bold text-xs transition flex items-center gap-1.5">
+                                <i class="fa-solid fa-film"></i> Xem Trận
+                            </button>
+                            <button onclick="openTournamentStandingsModal(${t.id})" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs transition flex items-center gap-1.5">
+                                <i class="fa-solid fa-list-ol text-amber-400"></i> Bảng Điểm
+                            </button>
+                        </div>
+                    </div>`;
+                }).join('');
+            } catch (err) {
+                listEl.innerHTML = `<div class="text-rose-400 text-xs py-4">${err.message}</div>`;
+            }
+        }
+
+        async function handleRegisterTour(tourId) {
+            if (!myActiveBot) return alert('Bạn cần kích hoạt 1 bot thi đấu trước khi đăng ký giải!');
+            try {
+                const res = await API.registerTournament(tourId, myActiveBot.id);
+                alert(res.message);
+                loadTournamentsForPlayer();
+            } catch (err) {
+                alert(err.message);
+            }
+        }
+
+        function openTournamentMatchesModal(tourId) {
+            currentViewingTourId = tourId;
+            const tour = tournamentsMap[tourId];
+            const title = tour ? tour.name : `Giải #${tourId}`;
+            document.getElementById('tourMatchesModalTitle').innerHTML = `<i class="fa-solid fa-gamepad text-sky-400"></i> Danh Sách Trận Đấu: ${title}`;
+            document.getElementById('matchSearchInput').value = '';
+            document.getElementById('matchRoundSelect').value = '';
+            document.getElementById('matchOrderSelect').value = 'asc';
+            document.getElementById('tournamentMatchesModal').classList.remove('hidden');
+            loadTournamentMatches();
+        }
+
+        function closeTournamentMatchesModal() {
+            document.getElementById('tournamentMatchesModal').classList.add('hidden');
+            currentViewingTourId = null;
+        }
+
+        function debounceMatchSearch() {
+            clearTimeout(matchSearchDebounceTimer);
+            matchSearchDebounceTimer = setTimeout(() => {
+                loadTournamentMatches();
+            }, 300);
+        }
+
+        async function loadTournamentMatches() {
+            if (!currentViewingTourId) return;
+            const tbody = document.getElementById('tourMatchesModalTbody');
+            tbody.innerHTML = '<tr><td colspan="6" class="text-center py-6 text-slate-500 italic"><i class="fa-solid fa-spinner fa-spin mr-1"></i> Đang tải các trận đấu...</td></tr>';
+
+            const q = document.getElementById('matchSearchInput').value.trim();
+            const roundType = document.getElementById('matchRoundSelect').value;
+            const order = document.getElementById('matchOrderSelect').value;
+
+            try {
+                const matches = await API.getTournamentMatches(currentViewingTourId, q, roundType, order);
+                if (!matches || matches.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="6" class="text-center py-6 text-slate-500 italic">Chưa có trận đấu nào được ghi nhận hoặc không có kết quả phù hợp.</td></tr>';
+                    return;
+                }
+
+                tbody.innerHTML = matches.map(m => {
+                    const winnerBadge = m.winner_name === 'Hòa'
+                        ? '<span class="text-amber-400 font-bold">Hòa</span>'
+                        : `<span class="text-emerald-400 font-bold">🏆 ${m.winner_name}</span>`;
+
+                    const replayBtn = m.id
+                        ? `<button onmouseenter="API.getReplay('/api/matches/${m.id}/replay')" onclick="handlePlayMatchReplay(${m.id})" class="px-2.5 py-1 rounded-lg bg-purple-950/80 hover:bg-purple-800 border border-purple-500/40 text-purple-300 font-bold text-xs transition inline-flex items-center gap-1 shadow"><i class="fa-solid fa-play text-[10px]"></i> Replay</button>`
+                        : `<span class="text-slate-600 text-xs italic">Không có</span>`;
+
+                    return `
+                    <tr class="border-b border-slate-800 hover:bg-slate-800/40 transition">
+                        <td class="py-2.5 px-3 font-mono font-bold text-slate-400">#${m.index}</td>
+                        <td class="py-2.5 px-3">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${m.round === 1 ? 'bg-sky-500/20 text-sky-300 border border-sky-500/30' : 'bg-indigo-500/20 text-indigo-300 border border-indigo-500/30'}">Lượt ${m.round}</span>
+                        </td>
+                        <td class="py-2.5 px-3 font-medium">
+                            <span class="text-sky-400 font-bold">${m.player1}</span> (${m.bot1_name})
+                            <span class="text-slate-500 mx-1">vs</span>
+                            <span class="text-rose-400 font-bold">${m.player2}</span> (${m.bot2_name})
+                        </td>
+                        <td class="py-2.5 px-3">
+                            <div>${winnerBadge}</div>
+                            <div class="text-[10px] text-slate-400 truncate max-w-[200px]" title="${m.win_reason || ''}">${m.win_reason || ''}</div>
+                        </td>
+                        <td class="py-2.5 px-3 text-center text-slate-400 font-mono">
+                            ${m.moves_count} nước <span class="text-[10px] text-slate-500">(${m.duration_sec}s)</span>
+                        </td>
+                        <td class="py-2.5 px-3 text-right">
+                            ${replayBtn}
+                        </td>
+                    </tr>`;
+                }).join('');
+            } catch (err) {
+                tbody.innerHTML = `<tr><td colspan="6" class="text-center py-6 text-rose-400">${err.message}</td></tr>`;
+            }
+        }
+
+        async function handlePlayMatchReplay(matchId) {
+            try {
+                const replayData = await API.getReplay(`/api/matches/${matchId}/replay`);
+                ReplayViewer.open(replayData);
+            } catch (err) {
+                alert('Không thể mở replay: ' + err.message);
+            }
+        }
+
+        function openTournamentStandingsModal(tourId) {
+            const tour = tournamentsMap[tourId];
+            const title = tour ? tour.name : `Giải #${tourId}`;
+            document.getElementById('tourStandingsModalTitle').innerHTML = `<i class="fa-solid fa-list-ol text-amber-400"></i> Bảng Điểm: ${title}`;
+            const tbody = document.getElementById('tourStandingsModalTbody');
+            tbody.innerHTML = '<tr><td colspan="7" class="text-center py-6 text-slate-500 italic"><i class="fa-solid fa-spinner fa-spin mr-1"></i> Đang nạp bảng xếp hạng giải...</td></tr>';
+            document.getElementById('tournamentStandingsModal').classList.remove('hidden');
+
+            API.getTournamentStandings(tourId).then(standings => {
+                if (!standings || standings.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="7" class="text-center py-6 text-slate-500 italic">Chưa có kết quả thi đấu cho giải này.</td></tr>';
+                    return;
+                }
+
+                tbody.innerHTML = standings.map((s, idx) => `
+                    <tr class="border-b border-slate-800 hover:bg-slate-800/40">
+                        <td class="py-2.5 px-3 font-mono font-bold ${idx === 0 ? 'text-amber-400' : 'text-slate-400'}">#${idx + 1}</td>
+                        <td class="py-2.5 px-3 font-bold text-white">${s.bot_name}</td>
+                        <td class="py-2.5 px-3 text-center text-slate-300 font-mono">${s.played}</td>
+                        <td class="py-2.5 px-3 text-center text-emerald-400 font-mono font-bold">${s.won}</td>
+                        <td class="py-2.5 px-3 text-center text-amber-400 font-mono font-bold">${s.drawn}</td>
+                        <td class="py-2.5 px-3 text-center text-rose-400 font-mono font-bold">${s.lost}</td>
+                        <td class="py-2.5 px-3 text-right font-mono font-black text-amber-300 text-sm">${s.points}</td>
+                    </tr>
+                `).join('');
+            }).catch(err => {
+                tbody.innerHTML = `<tr><td colspan="7" class="text-center py-6 text-rose-400">${err.message}</td></tr>`;
+            });
+        }
+
+        function closeTournamentStandingsModal() {
+            document.getElementById('tournamentStandingsModal').classList.add('hidden');
+        }
+
+        window.handleSetActive = handleSetActive;
+        window.handleRegisterTour = handleRegisterTour;
+        window.openTournamentMatchesModal = openTournamentMatchesModal;
+        window.closeTournamentMatchesModal = closeTournamentMatchesModal;
+        window.openTournamentStandingsModal = openTournamentStandingsModal;
+        window.closeTournamentStandingsModal = closeTournamentStandingsModal;
+        window.handlePlayMatchReplay = handlePlayMatchReplay;
+        window.switchTourSubTab = switchTourSubTab;
+        window.switchPlayerTab = switchPlayerTab;
+        window.debounceMatchSearch = debounceMatchSearch;
+        window.loadTournamentMatches = loadTournamentMatches;
+        window.openEditBotModal = openEditBotModal;
+        window.closeEditBotModal = closeEditBotModal;
+        window.handleSaveEditBot = handleSaveEditBot;
+        window.handleDeleteBot = handleDeleteBot;
+        window.handleUploadBot = handleUploadBot;
+        window.handleRunPracticeMatch = handleRunPracticeMatch;
+        window.handleAuthSubmit = handleAuthSubmit;
+        window.toggleAuthMode = toggleAuthMode;
+        window.handleLogout = handleLogout;
+        window.loadTournamentsForPlayer = loadTournamentsForPlayer;
+        window.loadMyBots = loadMyBots;
+
+        window.addEventListener('DOMContentLoaded', checkAuth);
+    </script>
+</body>
+</html>

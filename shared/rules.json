@@ -1,0 +1,38 @@
+{
+  "version": "2.0",
+  "name": "OanTuTi Tactics 9x9 Standard",
+  "boardSize": 9,
+  "maxTurns": 200,
+  "goals": {
+    "1": { "r": 0, "c": 8, "notation": "i9", "name": "Đích P1 (Phải-Trên)" },
+    "2": { "r": 8, "c": 0, "notation": "a1", "name": "Đích P2 (Trái-Dưới)" }
+  },
+  "homes": {
+    "1": { "r": 8, "c": 0, "notation": "a1", "name": "Nhà P1 (Trái-Dưới)" },
+    "2": { "r": 0, "c": 8, "notation": "i9", "name": "Nhà P2 (Phải-Trên)" }
+  },
+  "allowEnterOwnHome": false,
+  "beats": {
+    "R": "S",
+    "S": "P",
+    "P": "R"
+  },
+  "sameTypeRule": "block",
+  "winConditions": {
+    "reachGoal": true,
+    "extinctionAnyType": true,
+    "turnLimit": true,
+    "forfeit": true
+  },
+  "pieceTypes": ["R", "P", "S"],
+  "pieceEmojis": {
+    "R": "✊",
+    "P": "✋",
+    "S": "✌️"
+  },
+  "pieceCountsPerPlayer": {
+    "R": 6,
+    "P": 6,
+    "S": 6
+  }
+}

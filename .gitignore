@@ -1,10 +1,84 @@
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# C / C++ Compiled Binaries & Objects
+*.o
+*.obj
+*.exe
+*.out
+*.app
+*.bin
+*_bin
+*_bin.exe
+*.dll
+*.dylib
+*.pdb
+*.ilk
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Database & Cache
+*.sqlite
+*.sqlite3
+*.db
+.cache/
+
+backend/storage/bots/*
+!backend/storage/bots/.gitkeep
+backend/storage/replays/*
+!backend/storage/replays/.gitkeep
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Operating System Files
 .DS_Store
 Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Logs
+logs/
 *.log
-*.exe
-*.o
-BT2/server
-BT2/client
-BT2/multi_client
-**/*_bin
-**/bot_cpp

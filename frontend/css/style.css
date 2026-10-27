@@ -1,0 +1,45 @@
+body {
+    background-color: #090d16;
+    color: #f8fafc;
+    user-select: none;
+}
+
+.glass-panel {
+    background: rgba(21, 32, 54, 0.75);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.board-cell {
+    aspect-ratio: 1 / 1;
+    transition: all 0.15s ease;
+}
+
+.central-diagonal-cell {
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.025),
+        rgba(255, 255, 255, 0.025) 8px,
+        transparent 8px,
+        transparent 16px
+    );
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.5);
+}
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 4px;
+}

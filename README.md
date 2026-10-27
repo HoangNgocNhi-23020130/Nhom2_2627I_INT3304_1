@@ -291,23 +291,32 @@ Engine xác thực nước đi với danh sách hợp lệ. JSON sai, stdout r�
 
 ### 5.3. Bot Python mẫu
 
-Ví dụ tối giản: ưu tiên ăn quân nếu có, nếu không chọn nước hợp lệ đầu tiên.
-
-```python
-import json
+```
 import sys
+import json
 
-for line in sys.stdin:
-    request = json.loads(line)
-    legal_moves = request["legal_moves"]
-    captures = [move for move in legal_moves if move.get("is_capture")]
-    move = captures[0] if captures else legal_moves[0]
+while True:
+    line = sys.stdin.readline()
+    if not line:
+        break
+    try:
+        data = json.loads(line)
+        turn = data.get("turn", 1)
+        legal_moves = data.get("legal_moves", [])
+        if not legal_moves:
+            continue
 
-    response = {
-        "from": move["from_notation"],
-        "to": move["to_notation"],
-    }
-    print(json.dumps(response), flush=True)
+        target_r, target_c = (0, 8) if turn == 1 else (8, 0)
+        def dist(m):
+            to_coord = m["to"]
+            return max(abs(target_r - to_coord["r"]), abs(target_c - to_coord["c"]))
+
+        best_move = min(legal_moves, key=dist)
+        resp = {"from": best_move["from_notation"], "to": best_move["to_notation"]}
+        sys.stdout.write(json.dumps(resp) + "\n")
+        sys.stdout.flush()
+    except Exception:
+        pass
 ```
 
 Lưu thành `my_bot.py`, đăng nhập giao diện người chơi, tải file lên và chọn **Đấu tập** để thử trước khi đăng ký giải. Không cần tự cài thư viện ngoài cho mẫu này. Mỗi lần lượt mới, chương trình đọc thêm một dòng JSON và phải trả lời thêm một dòng.

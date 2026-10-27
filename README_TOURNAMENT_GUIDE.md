@@ -6,6 +6,16 @@ Tài liệu này cung cấp hướng dẫn toàn diện từ A đến Z cho Ban 
 2. **Tổ chức giải đấu On-LAN** (trong phòng máy / phòng thi nội bộ, **cách ly hoàn toàn với Internet để chống gian lận**).
 3. **Cách tùy biến và sửa đổi luật chơi** (kích thước bàn, tương khắc, số quân, biến thể triệt tiêu, bàn cờ chữ thập).
 4. **Hướng dẫn lập trình Bot & Giao thức Trọng tài (Bot Protocol)** (chuẩn I/O, cấu trúc JSON, bot Python mẫu).
+---
+## TÀI KHOẢN & THÔNG TIN MẶC ĐỊNH
+
+Khi chạy lệnh nạp dữ liệu mẫu (`python3 seed_data.py`), hệ thống tạo sẵn các tài khoản:
+
+| Tài Khoản | Mật Khẩu | Vai Trò | Quyền Hạn |
+| :--- | :--- | :--- | :--- |
+| **`admin`** | `123456` | Quản trị viên (Admin) | Tạo giải đấu, xếp lịch, đổi mùa, quản lý bot |
+| **`player1`** $\dots$ **`player20`** | `123456` | Thí sinh (Player) | Nạp bot, xem thứ hạng cá nhân, xem replay |
+
 
 ---
 
@@ -304,15 +314,6 @@ Lưu thành `my_bot.py`, đăng nhập giao diện người chơi, tải file l�
 
 ---
 
-## 6. TÀI KHOẢN & THÔNG TIN MẶC ĐỊNH
 
-Khi chạy lệnh nạp dữ liệu mẫu (`python3 seed_data.py`), hệ thống tạo sẵn các tài khoản:
-
-| Tài Khoản | Mật Khẩu | Vai Trò | Quyền Hạn |
-| :--- | :--- | :--- | :--- |
-| **`admin`** | `123456` | Quản trị viên (Admin) | Tạo giải đấu, xếp lịch, đổi mùa, quản lý bot |
-| **`player1`** $\dots$ **`player20`** | `123456` | Thí sinh (Player) | Nạp bot, xem thứ hạng cá nhân, xem replay |
-
----
 
 *Tài liệu được biên soạn phục vụ đồ án môn học INT3304_1 - Nhóm 2.*
